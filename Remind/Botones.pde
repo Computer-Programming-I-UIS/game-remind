@@ -26,7 +26,7 @@ class boton{
     }
     
     if(mousedentro == true){ // si el valor en linea() es verdadero 
-      strokeWeight(5);
+
       fill(#966FEA, 30);
       rect(posx,posy,ancho,alto);
       fill(0);
@@ -36,7 +36,7 @@ class boton{
     }
     else {
       noStroke();
-      fill(#71F9FF, 20);
+      fill(#71F9FF, 20);    
       rect(posx,posy,ancho,alto);
       fill(0);
       textSize(22);
