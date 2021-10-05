@@ -9,7 +9,7 @@ void menu(){
   fondoMenu= loadImage ("prueba1.jpg");
   fondoMenu.resize(width, height);
   image(fondoMenu, 0, 0);
-  D_alegria= loadImage ("alegriapanel.png");
+  D_alegria= loadImage ("alegriapres.png");
   A_alegria= loadImage ("alegriaperfil.png");
   botones[1].drawboton();
   botones[2].drawboton();
@@ -75,7 +75,7 @@ void niveles(){
 }
 
 void alegria(){
-  D_alegria.resize(width, height+5);
+  D_alegria.resize(width, height);
   image(D_alegria, 0, 0); 
   botones[9].drawboton();
   botones[10].drawboton();
