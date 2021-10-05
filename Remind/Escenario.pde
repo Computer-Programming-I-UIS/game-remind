@@ -2,15 +2,17 @@
 PImage fondoMenu;
 PImage D_alegria;
 PImage A_alegria;
+PImage NoSelec;
 
 
 void menu(){
   
-  fondoMenu= loadImage ("prueba1.jpg");
+  fondoMenu= loadImage ("menu.png");
   fondoMenu.resize(width, height);
   image(fondoMenu, 0, 0);
   D_alegria= loadImage ("alegriapres.png");
   A_alegria= loadImage ("alegriaperfil.png");
+  NoSelec= loadImage ("candado.png");
   botones[1].drawboton();
   botones[2].drawboton();
   botones[3].drawboton();
@@ -54,8 +56,17 @@ void personajes(){
   background(#464AAD);
   botones[5].drawboton();
   botones[8].drawboton();
+  botones[11].drawboton();
+  botones[12].drawboton();
+  botones[13].drawboton();
+  botones[14].drawboton();
   A_alegria.resize(190, 190);
-  image(A_alegria, 55, 85);
+  image(A_alegria, 75, 85);
+  NoSelec.resize(190, 190);
+  image(NoSelec, 325, 85);
+  image(NoSelec, 575, 85);
+  image(NoSelec, 825, 85);
+  image(NoSelec, 1075, 85);
   if (botones[5].click()){
     escenario= 0;
   }
