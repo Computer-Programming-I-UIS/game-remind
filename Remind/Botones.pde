@@ -32,7 +32,7 @@ class boton{
       fill(0);
       textSize(22);
       textAlign(CENTER,CENTER);
-      text(texto, posx + ancho/2,posy + alto/3);
+      text(texto, posx + ancho/2,posy + alto -22);
     }
     else {
       noStroke();
@@ -41,7 +41,7 @@ class boton{
       fill(0);
       textSize(22);
       textAlign(CENTER,CENTER);
-      text(texto, posx + ancho/2,posy + alto/3);      
+      text(texto, posx + ancho/2,posy + alto - 22);      
     }
   }
   boolean click(){ //identifica el click para cambiar de escenario
