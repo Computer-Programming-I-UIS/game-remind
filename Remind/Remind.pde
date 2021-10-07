@@ -1,23 +1,28 @@
 int escenario= 0;
-boton[] botones= new boton[25];
+boton[] botones= new boton[15];
+boton2[] botones2= new boton2[10];
 
 
 void setup(){
   fullScreen(); 
-  botones[1] = new boton (1070, 525, 130, 40, " ");
-  botones[2] = new boton (1105, 600, 155, 40, " ");
-  botones[3] = new boton (1183, 670, 110, 35, " ");
+  
+  //botones cambio escenario
+  botones[1] = new boton (1050, 400, 180, 70, "Iniciar");
+  botones[2] = new boton (1050, 500, 180, 70, "Opciones");
+  botones[3] = new boton (1050, 600, 180, 70, "Salir");
   botones[4] = new boton (600, 300, 150, 50, "audio");
   botones[5] = new boton (600, 440, 150, 50, "atrás");
   botones[6] = new boton (600, 300, 150, 50, "niveles");
-  botones[7] = new boton (600, 370, 150, 50, "personajes");
-  botones[8] = new boton (70, 80, 200, 250, "alegría");
-  botones[11] = new boton (320, 80, 200, 250, "tristeza");
-  botones[12] = new boton (570, 80, 200, 250, "desagrado");
-  botones[13] = new boton (820, 80, 200, 250, "furia");
-  botones[14] = new boton (1070, 80, 200, 250, "miedo");
-  botones[9] = new boton (78, 11, 120, 28, " ");//boton de jugar 2
-  botones[10] = new boton (220, 3, 130, 40, " ");// boton de inicio
+  botones[7] = new boton (600, 370, 150, 50, "continuar");
+  botones[8] = new boton (50, 6, 130, 35, "Jugar");
+  botones[9] = new boton (200, 6, 130, 35, "Inicio");
+  
+  //botones seleccion personaje
+  botones2[1] = new boton2 (70, 80, 200, 250, "alegría");
+  botones2[2] = new boton2 (320, 80, 200, 250, "tristeza");
+  botones2[3] = new boton2 (570, 80, 200, 250, "desagrado");
+  botones2[4] = new boton2 (820, 80, 200, 250, "furia");
+  botones2[5] = new boton2 (1070, 80, 200, 250, "miedo");
 }
 
 void draw(){
@@ -26,7 +31,7 @@ void draw(){
     menu();
     break;
     case 1: 
-    jugar();
+    iniciar();
     break;
     case 2:
     opciones();
@@ -36,6 +41,9 @@ void draw(){
     break;
     case 4: 
     alegria();
+    break;
+    case 5: 
+    jugar();
     break;
   }
   descseleccion();
