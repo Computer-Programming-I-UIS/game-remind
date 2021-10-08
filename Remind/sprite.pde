@@ -1,9 +1,9 @@
-class Sprite 
+class Sprite1
 {
   PImage img;
   PVector center, cambio, tamanio;
   int tipo, num;
-  Sprite(PImage archivo, float x, float y)
+  Sprite1(PImage archivo, float x, float y)
   {
     img=archivo;
     tamanio= new PVector (img.width, img.height);
@@ -12,7 +12,7 @@ class Sprite
     tipo=0;
     num=0;
   }
-  Sprite (PImage archivo, int pared)
+  Sprite1 (PImage archivo, int pared)
   {
   img=archivo;
   tamanio= new PVector (img.width, img.height);
@@ -21,7 +21,7 @@ class Sprite
  tipo=0;
  num=pared;
  }
- Sprite (float x, float y)
+ Sprite1 (float x, float y)
  {
    img= new PImage();
   tamanio= new PVector (0, 0);

@@ -4,14 +4,14 @@ PImage D_alegria;
 PImage A_alegria;
 PImage NoSelec;
 PImage Fpersonaje;
-PImage prueba;
+PImage prueba1;
 PImage fondoH;
 
 void loadImages(){
 
   //imagen iniciar y personajes
-  prueba= loadImage ("base.png");
-  prueba.resize(width, height);
+  prueba1= loadImage ("base.png");
+  prueba1.resize(width, height);
   
   //imagen menu
   fondoMenu= loadImage("fondomenuP.png");
@@ -67,7 +67,7 @@ void iniciar(){
 }
 
 void opciones(){
-  image(prueba, 0, 0);
+  image(prueba1, 0, 0);
   botones[4].drawboton();
   botones[5].drawboton();
   
@@ -77,7 +77,7 @@ void opciones(){
 }
 
 void personajes(){
-  image(prueba, 0, 0);
+  image(prueba1, 0, 0);
   botones[5].drawboton();
   botones2[1].drawboton2();
   botones2[2].drawboton2();

@@ -1,4 +1,4 @@
-class Animacion extends Sprite 
+class Animacion extends Sprite1 
 {
   PImage[] actual, quieto, moverIzq, moverDer;
   int dir, index, frame;

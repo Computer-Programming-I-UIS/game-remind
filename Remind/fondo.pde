@@ -1,12 +1,12 @@
 class Fondo
 {
-  PImage mySprite[], bgFondo;
-  float sizeSprite;
+  PImage mySprite1[], bgFondo;
+  float sizeSprite1;
   Fondo (String name, String tilemap, float size)
   {
-    sizeSprite=size;
-    mySprite= new LeerArchivo (8,5,tilemap).getHoja();
-    plataforma = new ArrayList <Sprite> ();
+    sizeSprite1=size;
+    mySprite1= new LeerArchivo (8,5,tilemap).getHoja();
+    plataforma = new ArrayList <Sprite1> ();
     
     bgFondo=loadImage("fondo1.jpeg");
     crearPlataforma(name);
@@ -14,7 +14,7 @@ class Fondo
   void mostrar()
   {
     image(bgFondo,0,0,width,height);
-    for(Sprite p: plataforma)
+    for(Sprite1 p: plataforma)
     p.mostrar();
   }
   void crearPlataforma(String archivo)
@@ -28,16 +28,16 @@ class Fondo
         int num = obtenerNum(valores[col]);
         if (num < 13)
         {
-          Sprite s = new Sprite (mySprite[num],num);
-          s.center.x= sizeSprite/2 + col * sizeSprite;
-          s.center.y = sizeSprite/2 + row * sizeSprite;
+          Sprite1 s = new Sprite1 (mySprite1[num],num);
+          s.center.x= sizeSprite1/2 + col * sizeSprite1;
+          s.center.y = sizeSprite1/2 + row * sizeSprite1;
           plataforma.add(s);
         }
         else if(num == 31)
         {
-          Sprite s = new Sprite (mySprite[13],num);
-          s.center.x= sizeSprite/2 + col * sizeSprite;
-          s.center.y = sizeSprite/2 + row * sizeSprite;
+          Sprite1 s = new Sprite1 (mySprite1[13],num);
+          s.center.x= sizeSprite1/2 + col * sizeSprite1;
+          s.center.y = sizeSprite1/2 + row * sizeSprite1;
           plataforma.add(s);
         }
       }
