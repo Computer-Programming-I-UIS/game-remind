@@ -43,7 +43,7 @@ void jugar()
   scroll();
   lv1.mostrar();
   player.mostrar();
-  rd();
+  recuerd();
 
 }
 void scroll()
@@ -63,13 +63,3 @@ void scroll()
   }
   translate(view_x,view_y);
 }
- void rd()
- {
-<<<<<<< HEAD
-   image(recuerdo,50,20,50,50);
-   
-=======
-   image(recuerdo,50,xx,40,40);
-    xx=xx-velocidad;
->>>>>>> 18fba8596d969112ffd8de0e4bfdb04fc520d905
- }
