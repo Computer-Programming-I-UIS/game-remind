@@ -5,6 +5,7 @@ PImage A_alegria;
 PImage NoSelec;
 PImage Fpersonaje;
 PImage prueba;
+PImage fondoH;
 
 void loadImages(){
 
@@ -16,9 +17,12 @@ void loadImages(){
   fondoMenu= loadImage("fondomenuP.png");
   fondoMenu.resize(width, height);
   
+  fondoH= loadImage("historiafondo.png");
+  fondoH.resize(width, height);
+  
   //imagen seleccion alegria como personaje 
   D_alegria= loadImage ("alegriapres.png");
-  D_alegria.resize(width, height);
+  D_alegria.resize(width, height+20);
   //imagen perfil de personajes 
   
     //alegria
@@ -30,7 +34,7 @@ void loadImages(){
 }
 
 
-void menu(){//escenario 0 
+void menu(){
   loadImages();
   image(fondoMenu, 0, 0);
   botones[1].drawboton();
@@ -47,9 +51,9 @@ void menu(){//escenario 0
   }
 }
 
+void iniciar(){
 
-void iniciar(){ //escenario 1
-  image(prueba, 0, 0);
+  image(fondoH, 0, 0);
   botones[7].drawboton();
   botones[5].drawboton();
   
@@ -62,7 +66,7 @@ void iniciar(){ //escenario 1
   }
 }
 
-void opciones(){ //escenario 2
+void opciones(){
   image(prueba, 0, 0);
   botones[4].drawboton();
   botones[5].drawboton();
@@ -72,7 +76,7 @@ void opciones(){ //escenario 2
   }
 }
 
-void personajes(){ //escenario 3
+void personajes(){
   image(prueba, 0, 0);
   botones[5].drawboton();
   botones2[1].drawboton2();
@@ -81,12 +85,12 @@ void personajes(){ //escenario 3
   botones2[4].drawboton2();
   botones2[5].drawboton2();
   
-  image(A_alegria, 75, 85);
+  image(A_alegria, 95, 250);
   
-  image(NoSelec, 325, 85);
-  image(NoSelec, 575, 85);
-  image(NoSelec, 825, 85);
-  image(NoSelec, 1075, 85);
+  image(NoSelec, 345, 250);
+  image(NoSelec, 595, 250);
+  image(NoSelec, 845, 250);
+  image(NoSelec, 1095, 250);
   if (botones[5].click()){
     escenario= 0;
   }
@@ -96,23 +100,28 @@ void personajes(){ //escenario 3
   }
 }
 
-void alegria(){ //escenario 4
+
+void alegria(){
   image(D_alegria, 0, 0); 
-  botones[8].drawboton();
-  botones[9].drawboton();
-  if(botones[9].click()){
+  botones3[0].drawboton3();
+  botones3[1].drawboton3();
+  botones4[0].drawboton4();
+  
+  if(botones3[1].click3()){
     escenario= 0;
   }
-  if(botones[8].click()){
+  if(botones4[0].click4()){
+    escenario=3;
+  }
+  if(botones3[0].click3()){
     escenario= 5;
   }
 }
 
-void jugar() //escenario 5
+void jugar2() //escenario 5
 {
   background(178,245,100);
-  scroll();
-  player.mostrar();
+  jugar();
 }
 
   
