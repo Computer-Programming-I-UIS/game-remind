@@ -6,6 +6,7 @@ PImage NoSelec;
 PImage Fpersonaje;
 PImage prueba1;
 PImage fondoH;
+PImage ayudaI;
 
 void loadImages(){
 
@@ -31,6 +32,9 @@ void loadImages(){
     //personajes bloqueados
     NoSelec= loadImage ("candado.png");
     NoSelec.resize(190, 190);
+    
+    ayudaI= loadImage ("menuayuda.png");
+    ayudaI.resize(width, height);
 }
 
 
@@ -66,9 +70,8 @@ void iniciar(){
   }
 }
 
-void opciones(){
-  image(prueba1, 0, 0);
-  botones[4].drawboton();
+void ayuda(){
+  image(ayudaI, 0, 0);
   botones[5].drawboton();
   
   if (botones[5].click()){

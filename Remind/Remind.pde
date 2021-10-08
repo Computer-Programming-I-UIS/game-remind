@@ -1,6 +1,16 @@
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+
 import sprites.*;
 import sprites.maths.*;
 import sprites.utils.*;
+
+Minim minim;
+AudioPlayer musicafondo;
 
 PImage prueba;
 Sprite caminar;
@@ -20,21 +30,25 @@ void setup() {
   reloj = new StopWatch();
   caminar=new Sprite(this, "spritesalegria.png", 8, 1, 0);
   personaje1= new personaje(150, 500);
+  
+  minim= new Minim(this);
+  musicafondo= minim.loadFile("audio.mpeg");
+  musicafondo.loop();
 
   //botones cambio escenario
   botones[1] = new boton (1050, 400, 180, 70, "Iniciar");
   botones[2] = new boton (1050, 500, 180, 70, "Opciones");
   botones[3] = new boton (1050, 600, 180, 70, "Salir");
   botones[4] = new boton (600, 300, 150, 50, "audio");
-  botones[5] = new boton (616, 630, 150, 50, "atrás");
+  botones[5] = new boton (616, 660, 150, 50, "atrás");
   botones[6] = new boton (600, 300, 150, 50, "niveles");
-  botones[7] = new boton (800, 630, 150, 50, "continuar");
+  botones[7] = new boton (800, 660, 150, 50, "continuar");
 
   //bootones color invertido
   botones3[0] = new boton3 (50, 6, 130, 35, "Jugar");
   botones3[1] = new boton3 (200, 6, 130, 35, "Inicio");
 
-  botones4[0]= new boton4 (1255, 55, 50, 50, "X");
+  botones4[0]= new boton4 (1235, 55, 50, 50, "X");
 
   //botones seleccion personaje
   botones2[1] = new boton2 (70, 230, 200, 250, "alegría");
@@ -56,7 +70,7 @@ void draw() {
     iniciar();
     break;
   case 2:
-    opciones();
+    ayuda();
     break;
   case 3:
     personajes();
