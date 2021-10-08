@@ -9,7 +9,8 @@ final static float gravedad =0.6;
 final static float salto = 14;
 final static float vel= 5;
 final static float size_sprite1=32;
-public float Velocidad = 5;
+int velocidad;
+int xx;
 int x=0, y=0;
 float view_x=0;
 float view_y=0;
@@ -27,6 +28,8 @@ void setnivel()
   player.center.x= 65;
   player.center.y = 100;
   lv1 = new Fondo ("Libro1.csv","Tileset32.png",32);
+  xx=25;
+  velocidad=3;
   recuerdo= loadImage("recuerdo.png");
 }
 /*void draw()
@@ -62,7 +65,6 @@ void scroll()
 }
  void rd()
  {
-   image(recuerdo,50,20,50,50);
-   transform.position += transform.up *Velocidad* Time.deltaTime;
-   
+   image(recuerdo,50,xx,40,40);
+    xx=xx-velocidad;
  }
