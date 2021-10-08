@@ -13,7 +13,7 @@ float view_x=0;
 float view_y=0;
 
 PImage [] personaje;
-ArrayList <Sprite1> plataforma;
+
 
 Fondo lv1;
 
