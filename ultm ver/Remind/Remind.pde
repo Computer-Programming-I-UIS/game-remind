@@ -1,6 +1,16 @@
+import ddf.minim.*;
+import ddf.minim.analysis.*;
+import ddf.minim.effects.*;
+import ddf.minim.signals.*;
+import ddf.minim.spi.*;
+import ddf.minim.ugens.*;
+
 import sprites.*;
 import sprites.maths.*;
 import sprites.utils.*;
+
+Minim minim;
+AudioPlayer musicafondo;
 
 PImage prueba;
 Sprite caminar;
@@ -20,6 +30,10 @@ void setup() {
   reloj = new StopWatch();
   caminar=new Sprite(this, "spritesalegria.png", 8, 1, 0);
   personaje1= new personaje(150, 500);
+  
+  minim= new Minim(this);
+  musicafondo= minim.loadFile("audio.mpeg");
+  musicafondo.loop();
 
   //botones cambio escenario
   botones[1] = new boton (1050, 400, 180, 70, "Iniciar");
