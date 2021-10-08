@@ -13,7 +13,7 @@ class Fondo
   }
   void mostrar()
   {
-    image(bgFondo,0,0,width,height);
+    image(bgFondo,683,350,width,height);
     for(Sprite1 p: plataforma)
     p.mostrar();
   }
