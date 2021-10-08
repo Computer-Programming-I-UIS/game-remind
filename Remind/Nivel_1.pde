@@ -19,7 +19,7 @@ Fondo lv1;
 
 void setnivel()
 {
-  personaje= new LeerArchivo (4,12,"sad.jpg").getHoja();
+  personaje= new LeerArchivo (100,100,"sad.jpg").getHoja();
   player=new Player (personaje [0]);
   player.center.x= 65;
   player.center.y = 100;
