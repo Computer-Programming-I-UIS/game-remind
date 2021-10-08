@@ -63,6 +63,5 @@ void scroll()
  void rd()
  {
    image(recuerdo,50,20,50,50);
-   transform.position += transform.up *Velocidad* Time.deltaTime;
    
  }

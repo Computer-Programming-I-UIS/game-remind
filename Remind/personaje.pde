@@ -17,14 +17,14 @@ class personaje {
     if (keyPressed) {
       if (key ==CODED) {
         if (keyCode==UP ) {
-          vely=-10;
+          vely=-60;
           saltando= true;
         }
         if (keyCode==RIGHT  ) {
-          xP=xP+3;
+          xP=xP+20;
         }
         if (keyCode==LEFT) {
-          xP=xP-3;
+          xP=xP-20;
         }
       }
     }
@@ -61,7 +61,7 @@ class personaje {
         caminar.setFrameSequence(0, 3, 0.1);
       }
       if(!Arr && Izq && !Der){
-        caminar.setFrameSequence(4, 7, 0.1);
+        caminar.setFrameSequence(5, 7, 0.1);
       }
       pushMatrix();
       translate(xP, yP);
@@ -71,7 +71,7 @@ class personaje {
       
       yP= constrain(yP+vely, 400, suelo);
       if(saltando){
-        vely += 1;
+        vely += 40;
         if(y >=suelo)
         saltando = false;
       }
