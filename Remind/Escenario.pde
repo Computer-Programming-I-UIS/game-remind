@@ -122,6 +122,8 @@ void jugar2() //escenario 5
 {
   background(178,245,100);
   jugar();
+  personaje1.controles();
+  personaje1.moveP();
 }
 
   

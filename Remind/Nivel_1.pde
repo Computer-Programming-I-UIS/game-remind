@@ -36,8 +36,7 @@ void jugar()
   scroll();
   lv1.mostrar();
   player.mostrar();
-  personaje1.controles();
-  personaje1.moveP();
+
 }
 void scroll()
 {

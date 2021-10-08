@@ -1,7 +1,11 @@
 class personaje {
-  int xP;
-  int yP;
-
+  float xP;
+  float yP;
+  float vely;
+  boolean saltando;
+  boolean Arr;
+  boolean Izq;
+  boolean Der;
 
   personaje(int _xP, int _yP) {
     xP=_xP;
@@ -13,7 +17,8 @@ class personaje {
     if (keyPressed) {
       if (key ==CODED) {
         if (keyCode==UP ) {
-          yP= yP-5;
+          vely=-10;
+          saltando= true;
         }
         if (keyCode==RIGHT  ) {
           xP=xP+3;
@@ -28,14 +33,34 @@ class personaje {
   void moveP() {
     if (keyPressed && key==CODED )
     {
-      if (keyCode==UP ) {
-        caminar.setFrameSequence(0, 6, 0.1);
+      if (keyCode==UP) {
+        Arr= true;
+        Der= false;
+        Izq= false;
       }
 
       if (keyCode==RIGHT  ) {
-        caminar.setFrameSequence(0, 6, 0.1);
+        Der= true;
+        Izq= false;
+        Arr= false;
       }
       if (keyCode==LEFT) {
+        Izq= true;
+        Arr= false;
+        Der= false;
+      }
+    }
+      else{
+        caminar.setFrameSequence(0,0,0.1);
+      }
+      
+      if(Arr && !Izq && !Der){
+        caminar.setFrameSequence(0, 0, 0.1);
+      }
+      if(!Arr &&!Izq && Der){
+        caminar.setFrameSequence(0, 6, 0.1);
+      }
+      if(!Arr && Izq && !Der){
         caminar.setFrameSequence(6, 11, 0.1);
       }
       pushMatrix();
@@ -43,6 +68,13 @@ class personaje {
       scale(0.4);
       caminar.draw();
       popMatrix();
-    }
+      
+      yP= constrain(yP+vely, 400, suelo);
+      if(saltando){
+        vely += 1;
+        if(y >=suelo)
+        saltando = false;
+      }
+      
   }
 }

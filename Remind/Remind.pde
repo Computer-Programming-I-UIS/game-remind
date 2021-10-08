@@ -7,6 +7,7 @@ Sprite caminar;
 StopWatch reloj;
 float tiempo=0;
 personaje personaje1;
+int suelo= 500;
 
 int escenario= 0;
 boton[] botones= new boton[15];
@@ -18,7 +19,7 @@ void setup() {
   fullScreen();
   reloj = new StopWatch();
   caminar=new Sprite(this, "prueba1.png", 12, 1, 0);
-  personaje1= new personaje(150, 200);
+  personaje1= new personaje(150, 500);
 
   //botones cambio escenario
   botones[1] = new boton (1050, 400, 180, 70, "Iniciar");
