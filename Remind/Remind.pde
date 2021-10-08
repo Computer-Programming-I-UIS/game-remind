@@ -18,7 +18,7 @@ boton4[] botones4= new boton4[5];
 void setup() {
   fullScreen();
   reloj = new StopWatch();
-  caminar=new Sprite(this, "prueba1.png", 12, 1, 0);
+  caminar=new Sprite(this, "spritesalegria.png", 8, 1, 0);
   personaje1= new personaje(150, 500);
 
   //botones cambio escenario

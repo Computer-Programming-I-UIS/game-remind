@@ -55,17 +55,17 @@ class personaje {
       }
       
       if(Arr && !Izq && !Der){
-        caminar.setFrameSequence(0, 0, 0.1);
+        caminar.setFrameSequence(0, 1, 3.1);
       }
       if(!Arr &&!Izq && Der){
-        caminar.setFrameSequence(0, 6, 0.1);
+        caminar.setFrameSequence(0, 3, 0.1);
       }
       if(!Arr && Izq && !Der){
-        caminar.setFrameSequence(6, 11, 0.1);
+        caminar.setFrameSequence(4, 7, 0.1);
       }
       pushMatrix();
       translate(xP, yP);
-      scale(0.4);
+      scale(0.1);
       caminar.draw();
       popMatrix();
       
