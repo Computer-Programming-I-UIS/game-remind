@@ -24,6 +24,7 @@ boton[] botones= new boton[15];
 boton2[] botones2= new boton2[10];
 boton3[] botones3= new boton3[2];
 boton4[] botones4= new boton4[5];
+boton5[] botones5= new boton5[2];
 
 void setup() {
   fullScreen();
@@ -34,6 +35,9 @@ void setup() {
   minim= new Minim(this);
   musicafondo= minim.loadFile("sonido/audio.mpeg");
   musicafondo.loop();
+  
+  //boton musica
+  botones5[0]= new boton5(1070, 100, 50, 50);
 
   //botones cambio escenario
   botones[1] = new boton (1050, 400, 180, 70, "Iniciar");

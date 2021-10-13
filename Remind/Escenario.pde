@@ -44,6 +44,7 @@ void menu(){
   botones[1].drawboton();
   botones[2].drawboton();
   botones[3].drawboton();
+  botones5[0].drawboton5();
   if(botones[1].click()){
     escenario= 1;
   }
@@ -53,6 +54,7 @@ void menu(){
   if(botones[2].click()){
     escenario= 2;
   }
+
 }
 
 void iniciar(){

@@ -174,6 +174,8 @@ class boton3{
   }
 }
 
+//boton con colores invertidos
+
 PImage botonE;
 PImage botonF;
 
@@ -223,6 +225,54 @@ void drawboton4(){ //cuando el mouse esta sobre el boton cambia de color el boto
 }
   boolean click4(){ //identifica el click para cambiar de escenario
     if (mousedentro4== true && seleccion[0]==true){
+      return true;
+    }
+    else {
+      return false;
+    }
+  }
+}
+
+//boton musica
+
+PImage botonM;
+PImage botonS;
+
+class boton5{
+  float posx5;
+  float posy5;
+  int ancho5;
+  int alto5;
+  boolean mousedentro5; 
+  
+  boton5(float A5, float B5, int W5, int H5){
+    posx5= A5;
+    posy5= B5;
+    ancho5= W5;
+    alto5= H5;
+    botonM= loadImage("botonM1.png");
+    botonS= loadImage("botonM2.png");
+  }
+
+  void drawboton5(){ //cuando el mouse esta sobre el boton cambia de color el boton
+    
+    if(mouseX >= posx5 && mouseX<= posx5 + ancho5 && mouseY >= posy5  && mouseY <= posy5 + alto5){
+      mousedentro5 = true;
+    }
+    else {
+      mousedentro5 = false;
+    }
+    if(click5()==true){
+      botonS.resize(ancho5, alto5);
+      image(botonS, posx5, posy5); 
+    }
+    if(click5()==false){
+      botonM.resize(ancho5, alto5);
+      image(botonM, posx5, posy5); 
+    }
+  }
+  boolean click5(){ //identifica el click para cambiar de escenario
+    if (mousedentro5== true && seleccion[0]==true){
       return true;
     }
     else {
