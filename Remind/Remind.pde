@@ -32,7 +32,7 @@ void setup() {
   personaje1= new personaje(150, 500);
   
   minim= new Minim(this);
-  musicafondo= minim.loadFile("audio.mpeg");
+  musicafondo= minim.loadFile("sonido/audio.mpeg");
   musicafondo.loop();
 
   //botones cambio escenario
