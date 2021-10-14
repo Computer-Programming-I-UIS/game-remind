@@ -9,8 +9,6 @@ import sprites.*;
 import sprites.maths.*;
 import sprites.utils.*;
 
-Minim minim;
-AudioPlayer musicafondo;
 
 PImage prueba;
 Sprite caminar;
@@ -32,9 +30,6 @@ void setup() {
   caminar=new Sprite(this, "spritesalegria.png", 8, 1, 0);
   personaje1= new personaje(150, 500);
   
-  minim= new Minim(this);
-  musicafondo= minim.loadFile("sonido/audio.mpeg");
-  musicafondo.loop();
   
   //boton musica
   botones5[0]= new boton5(1070, 100, 50, 50);
