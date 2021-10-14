@@ -265,10 +265,12 @@ class boton5{
     if(click5()==true){
       botonS.resize(ancho5, alto5);
       image(botonS, posx5, posy5); 
+      musicafondo.pause();
     }
     if(click5()==false){
       botonM.resize(ancho5, alto5);
       image(botonM, posx5, posy5); 
+      
     }
   }
   boolean click5(){ //identifica el click para cambiar de escenario
