@@ -255,30 +255,25 @@ class boton5{
   }
 
   void drawboton5(){ //cuando el mouse esta sobre el boton cambia de color el boton
-    
+     botonM.resize(ancho5, alto5);
+       image(botonM, posx5, posy5);
+       
     if(mouseX >= posx5 && mouseX<= posx5 + ancho5 && mouseY >= posy5  && mouseY <= posy5 + alto5){
       mousedentro5 = true;
-    }
-    else {
-      mousedentro5 = false;
-    }
-    if(click5()==true){
-      botonS.resize(ancho5, alto5);
-      image(botonS, posx5, posy5); 
-      musicafondo.pause();
-    }
-    if(click5()==false){
-      botonM.resize(ancho5, alto5);
-      image(botonM, posx5, posy5); 
       
     }
-  }
-  boolean click5(){ //identifica el click para cambiar de escenario
-    if (mousedentro5== true && seleccion[0]==true){
-      return true;
+    if( mousedentro5 == true)
+    {
+      musicafondo.pause(); 
+      botonS.resize(ancho5, alto5);
+      image(botonS, posx5, posy5);
     }
-    else {
-      return false;
+    else if (mouseX >= posx5 && mouseX<= posx5 + ancho5 && mouseY >= posy5  && mouseY <= posy5 + alto5){
+      botonM.resize(ancho5, alto5);
+       image(botonM, posx5, posy5);
+        musicafondo.loop();
+        mousedentro5 = false;
     }
+    return;
   }
 }
