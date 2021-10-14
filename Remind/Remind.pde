@@ -93,6 +93,7 @@ boolean[] seleccion= new boolean[2];
 void mousePressed() { //identifica cuando se hace click izquierdo
   if (mouseButton==LEFT) {
     seleccion[0]= true;
+    seleccion[1]= true;
   }
 }
 

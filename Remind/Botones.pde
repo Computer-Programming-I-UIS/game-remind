@@ -267,6 +267,7 @@ class boton5{
       musicafondo.pause(); 
       botonS.resize(ancho5, alto5);
       image(botonS, posx5, posy5);
+      
     }
     else{
       botonM.resize(ancho5, alto5);
@@ -276,7 +277,7 @@ class boton5{
     }
 }
     boolean click5(){ //identifica el click para cambiar de escenario
-    if (mousedentro5== true && seleccion[0]==true){
+    if (mousedentro5== true && seleccion[1]==true){
       return true;
     }
     else {
