@@ -36,13 +36,15 @@ void setnivel()
 {
   background(178,245,100);
   jugar();
-}
-*/
+}*/
+
 void jugar()
 {
   scroll();
   lv1.mostrar();
-  player.mostrar();
+  personaje1.controles();
+  personaje1.moveP();
+  Player player;
   rec();
 
 }
@@ -50,13 +52,13 @@ void scroll()
 {
   setnivel();
   float der_dimension= view_x + width - der_margen;
-  if(player.getRight()> der_dimension)
+  if(personaje1.pospersonaje() > der_dimension)
   {
     if(view_x <3700)
     view_x += player.getRight () - der_dimension;
   }
   float izq_dimension = view_x - izq_margen;
-  if(player.getLeft() < izq_dimension)
+  if(personaje1.pospersonaje() < izq_dimension)
   {
     if(view_x > 0)
     view_x -= izq_dimension - player.getLeft();

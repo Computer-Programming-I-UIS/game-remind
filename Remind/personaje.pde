@@ -11,7 +11,7 @@ class personaje {
     xP=_xP;
     yP=_yP;
   }//cierra el constructor
-  //boolean up=false,donw=false,rith=false,left=false;
+  //boolean up=false,rith=false,left=false;
 
   void controles() {
     if (keyPressed) {
@@ -49,32 +49,34 @@ class personaje {
         Arr= false;
         Der= false;
       }
+    } else {
+      caminar.setFrameSequence(0, 0, 0.1);
     }
-      else{
-        caminar.setFrameSequence(0,0,0.1);
-      }
-      
-      if(Arr && !Izq && !Der){
-        caminar.setFrameSequence(0, 1, 3.1);
-      }
-      if(!Arr &&!Izq && Der){
-        caminar.setFrameSequence(0, 3, 0.1);
-      }
-      if(!Arr && Izq && !Der){
-        caminar.setFrameSequence(5, 7, 0.1);
-      }
-      pushMatrix();
-      translate(xP, yP);
-      scale(0.1);
-      caminar.draw();
-      popMatrix();
-      
-      yP= constrain(yP+vely, 400, suelo);
-      if(saltando){
-        vely += 40;
-        if(y >=suelo)
+
+    if (Arr && !Izq && !Der) {
+      caminar.setFrameSequence(0, 1, 3.1);
+    }
+    if (!Arr &&!Izq && Der) {
+      caminar.setFrameSequence(0, 3, 0.1);
+    }
+    if (!Arr && Izq && !Der) {
+      caminar.setFrameSequence(5, 7, 0.1);
+    }
+    pushMatrix();
+    translate(xP, yP);
+    scale(0.1);
+    caminar.draw();
+    popMatrix();
+
+    yP= constrain(yP+vely, 400, suelo);
+    if (saltando) {
+      vely += 40;
+      if (y ==suelo)
         saltando = false;
-      }
-      
+    }
+  }
+  float pospersonaje()
+  {
+    return xP;
   }
 }

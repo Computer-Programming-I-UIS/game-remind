@@ -32,8 +32,8 @@ void setup() {
   reloj = new StopWatch();
   caminar=new Sprite(this, "spritesalegria.png", 8, 1, 0);
   personaje1= new personaje(150, 500);
-  
-    minim= new Minim(this);
+
+  minim= new Minim(this);
   musicafondo= minim.loadFile("sonido/audio.mpeg");
   musicafondo.loop();
   //boton musica

@@ -33,7 +33,7 @@ class Player extends Animacion
     if(dir == derecha)
     {
       if(enPiso)
-      actual=irDer;
+      actual=irDer; //imagenes 
       else if(!enPlataforma)
       actual=saltoDer;
       else
