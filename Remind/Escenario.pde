@@ -44,7 +44,15 @@ void menu(){
   botones[1].drawboton();
   botones[2].drawboton();
   botones[3].drawboton();
-  botones5[0].drawboton5();
+  musica.click5();
+  if (press==false) {
+    musica.sonidoOFF();
+  }
+  if (press==true) {
+    
+    musica.sonidoON();
+  }
+  
   if(botones[1].click()){
     escenario= 1;
   }

@@ -16,6 +16,8 @@ StopWatch reloj;
 float tiempo=0;
 personaje personaje1;
 int suelo= 500;
+boton5 musica;
+boolean press;
 
 Minim minim;
 AudioPlayer musicafondo;
@@ -25,7 +27,7 @@ boton[] botones= new boton[15];
 boton2[] botones2= new boton2[10];
 boton3[] botones3= new boton3[2];
 boton4[] botones4= new boton4[5];
-boton5[] botones5= new boton5[2];
+
 
 void setup() {
   fullScreen();
@@ -35,9 +37,9 @@ void setup() {
 
   minim= new Minim(this);
   musicafondo= minim.loadFile("sonido/audio.mpeg");
-  musicafondo.loop();
+ // musicafondo.loop();
   //boton musica
-  botones5[0]= new boton5(1070, 100, 50, 50);
+  musica= new boton5 (1070, 100, 50, 50);
 
   //botones cambio escenario
   botones[1] = new boton (1050, 400, 180, 70, "Iniciar");
@@ -65,7 +67,7 @@ void setup() {
 void draw() {
   tiempo=(float)reloj.getElapsedTime();
   S4P.updateSprites(tiempo);
-
+  
   switch(escenario) {
   case 0:
     menu();
@@ -94,6 +96,23 @@ void mousePressed() { //identifica cuando se hace click izquierdo
   if (mouseButton==LEFT) {
     seleccion[0]= true;
     seleccion[1]= true;
+  }
+  if (mousePressed) {
+    if (mouseX >= 1070 && mouseX<= 1070 + 50 && mouseY >= 100  && mouseY <= 100 + 50) {
+      press=!press;
+    }
+  }
+  if (press==false) {
+    musica.sonidoOFF();
+    if (musicafondo.isPlaying())musicafondo.pause();
+  }
+
+  if (press==true) {
+    musica.sonidoON();
+    if (musicafondo.isPlaying() == false ){
+      musicafondo.play();
+      musicafondo.loop();
+    }
   }
 }
 
