@@ -5,9 +5,9 @@ final static int izquierda=2;
 final static float der_margen =400;
 final static float izq_margen =32;
 final static float ver_margen =40;
-final static float gravedad =0.6;
-final static float salto = 14;
-final static float vel= 5;
+//final static float gravedad =0.6;
+//final static float salto = 14;
+//final static float vel= 5;
 final static float size_sprite1=32;
 int velocidad;
 int xx;
@@ -29,7 +29,7 @@ void setnivel()
   player.center.y = 100;
   lv1 = new Fondo ("Libro1.csv","Tileset32.png",32);
   xx=25;
-  velocidad=3;
+  velocidad=1;
   recuerdo= loadImage("recuerdo.png");
 }
 /*void draw()

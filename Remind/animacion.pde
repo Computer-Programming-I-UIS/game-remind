@@ -2,7 +2,7 @@ class Animacion extends Sprite1
 {
   PImage[] actual, quieto, moverIzq, moverDer;
   int dir, index, frame;
- Animacion(PImage img)
+  Animacion(PImage img)
   {
     super(img, 0);
     dir = normal;
@@ -14,9 +14,9 @@ class Animacion extends Sprite1
     //frame++;
     //if (frame % 8 == 0)
     //{
-      seleccionarDireccion();
-      seleccionarImagenActual();
-      //avanzaImagen();
+    seleccionarDireccion();
+    seleccionarImagenActual();
+    //avanzaImagen();
     //}
   }
   void seleccionarDireccion()
@@ -35,7 +35,7 @@ class Animacion extends Sprite1
     else if (dir == derecha)
       actual=moverDer;
     else
-    actual=quieto;
+      actual=quieto;
   }
   /*void avanzaImagen()
    {

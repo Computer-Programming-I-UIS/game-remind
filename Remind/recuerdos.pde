@@ -25,6 +25,6 @@ void load2(){
 }
 
 void memory(float pos_x2, float pos_y2){
-  image(recuerdo2, pos_x2, pos_y2, 30, 30);
+  image(recuerdo2, pos_x2, pos_y2, 40, 40);
   pos_y2 += 3;
 }
