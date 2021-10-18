@@ -50,6 +50,7 @@ Imagenes usadas para la creación de las ilustraciones
 - Cielo: https://co.pinterest.com/pin/832814156098860072/
 - Candado: https://www.pngwing.com/es/free-png-ijglf
 - Fondo azul: https://www.wallpapertip.com/es/TwxJwJ/
+- Dementor/monstruo: https://www.pinterest.com.mx/pin/614882155348010975/
 
 Banda sonora 
 - Inside Out de Michael Giacchino
