@@ -13,7 +13,7 @@ Riley (protagonista de intensamente) ha viajado con sus amigos de preparatoria a
 
 ## Descripción del juego:
 
-Remind es un juego que consiste en ayudar a Alegría recorrer un camino, he ir recolectando bolitas (recuerdos) que se encuentran distribuidas, para posteriormente enfrentarse al temido monstruo Amnesia, evitando que esté le quite los recuerdos a Alegria y 
+Remind es un juego que consiste en ayudar a Alegría recorrer un camino, he ir recolectando bolitas (recuerdos) que se encuentran distribuidas por los niveles y para posteriormente enfrentarse al temido monstruo Amnesia, evitando que esté le quite los recuerdos.
 
 ## Objetivo 
 
