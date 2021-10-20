@@ -1,18 +1,20 @@
 class personaje {
-  float xP;
-  float yP;
+  float xP=150;
+  float yP= 500;
   float vely;
   boolean saltando;
   boolean Arr;
   boolean Izq;
   boolean Der;
   
-  int ancho = int(0.108*694);
-  int alto = int(976*0.108);
+  float xP_mas_ancho,yP_mas_alto;
+ // = int(0.108*694);int(976*0.108);
+  int diametro = 70, radio;
 
-  personaje(int _xP, int _yP) {
-    xP=_xP;
-    yP=_yP;
+  personaje() {
+    radio = diametro/2;
+    xP_mas_ancho = xP -(0.108*694/2);
+    yP_mas_alto = yP - (976*0.108/2);
   }//cierra el constructor
   //boolean up=false,rith=false,left=false;
 
@@ -65,10 +67,13 @@ class personaje {
     if (!Arr && Izq && !Der) {
       caminar.setFrameSequence(5, 7, 0.04);
     }
+    //circle(xP, yP, diametro);
     pushMatrix();
     translate(xP, yP);
+    
     scale(0.108);
     caminar.draw();
+    
     popMatrix();
 
     yP= constrain(yP+vely, 400, suelo);

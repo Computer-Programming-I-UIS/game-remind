@@ -23,45 +23,53 @@ Fondo lv1;
 
 void setnivel()
 {
-  personaje= new LeerArchivo (100,100,"sad.jpg").getHoja();
+  personaje= new LeerArchivo (100, 100, "sad.jpg").getHoja();
   player=new Player (personaje [0]);
   player.center.x= 65;
   player.center.y = 100;
-  lv1 = new Fondo ("Libro1.csv","Tileset32.png",32);
+  lv1 = new Fondo ("Libro1.csv", "Tileset32.png", 32);
   xx=25;
   velocidad=1;
   recuerdo= loadImage("recuerdo.png");
 }
 /*void draw()
-{
-  background(178,245,100);
-  jugar();
-}*/
+ {
+ background(178,245,100);
+ jugar();
+ }*/
 
 void jugar()
 {
   scroll();
   lv1.mostrar();
-  personaje1.controles();
-  personaje1.moveP();
+  jugador.controles();
+  jugador.moveP();
   Player player;
-  rec();
+  
+  cantRecuerdos = misRecuerdos.size();
 
+  for (int i = 0; i < cantRecuerdos; i++) {
+    Recuerdo recuerdo = misRecuerdos.get(i);
+    recuerdo.draw();
+  }
+
+
+  verficarContactoRecuerdoPersonaje();//verifica en que momento chocan el recuerdo y el personaje
 }
 void scroll()
 {
   setnivel();
   float der_dimension= view_x + width - der_margen;
-  if(personaje1.pospersonaje() > der_dimension)
+  if (jugador.pospersonaje() > der_dimension)
   {
-    if(view_x <3700)
-    view_x += player.getRight () - der_dimension;
+    if (view_x <3700)
+      view_x += player.getRight () - der_dimension;
   }
   float izq_dimension = view_x - izq_margen;
-  if(personaje1.pospersonaje() < izq_dimension)
+  if (jugador.pospersonaje() < izq_dimension)
   {
-    if(view_x > 0)
-    view_x -= izq_dimension - player.getLeft();
+    if (view_x > 0)
+      view_x -= izq_dimension - player.getLeft();
   }
-  translate(view_x,view_y);
+  translate(view_x, view_y);
 }

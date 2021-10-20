@@ -9,12 +9,15 @@ import sprites.*;
 import sprites.maths.*;
 import sprites.utils.*;
 
+//recuerdos
+ArrayList<Recuerdo> misRecuerdos;
+int cantRecuerdos = 10;
 
 PImage prueba;
 Sprite caminar;
 StopWatch reloj;
 float tiempo=0;
-personaje personaje1;
+personaje jugador;
 int suelo= 500;
 boton5 musica;
 boolean press;
@@ -29,13 +32,20 @@ void setup() {
   fullScreen();
   reloj = new StopWatch();
   caminar=new Sprite(this, "spritesalegria.png", 8, 1, 0);
-  personaje1= new personaje(150, 500);
+  jugador= new personaje();
 
   minim= new Minim(this);
   musicafondo= minim.loadFile("sonido/audio.mpeg");
   // musicafondo.loop();
   //boton musica
   musica= new boton5 (1250, 140, 50, 50);
+
+  //recuerdos
+  misRecuerdos = new ArrayList<Recuerdo>();
+  for (int i = 0; i < cantRecuerdos; i++) {
+    Recuerdo recuerdo = new Recuerdo();
+    misRecuerdos.add(recuerdo);
+  }
 
   //botones cambio escenario
   botones[1] = new boton (1050, 300, 200, 70, "Iniciar");
@@ -102,4 +112,21 @@ void descseleccion() { //despues del primer click ya no contara los siguientes
 
   if (seleccion[0])
     seleccion[0]= false;
+}
+
+void verficarContactoRecuerdoPersonaje() {
+  cantRecuerdos = misRecuerdos.size();
+  int recuerdoAEliminar = -1;
+  for (int i = 0; i < cantRecuerdos; i++) {
+
+    Recuerdo recuerdo = misRecuerdos.get(i);
+
+    if ( dist(jugador.xP, jugador.yP, recuerdo.x_mas_ancho, recuerdo.y_mas_alto) <= jugador.radio + recuerdo.radio ) {
+      recuerdoAEliminar = i;
+    }
+  }
+
+  if ( recuerdoAEliminar != -1 ) {
+    misRecuerdos.remove(recuerdoAEliminar);
+  }
 }

@@ -1,30 +1,24 @@
+class Recuerdo {
+  PImage recuerdo1;
+  int x = int(random(0,900)), y = int(random(0,500)), ancho = 55, alto = 50;
+  int x_mas_ancho, y_mas_alto, diametro = 40, radio;
+  //int x, yancho = 55, alto = 50;
 
-  float _x2=30, _y2=0;
-  float velocidad2=2;
-  PImage recuerdo2;
+  Recuerdo() {
+//int _x,int _y
+    recuerdo1= loadImage("recuerdo.png");
+    recuerdo1.resize(ancho, alto);
+    x_mas_ancho = x + (ancho/2);
+    y_mas_alto = y +(alto/2);
+    radio = diametro/2;
+  }
 
-void load2(){
-  recuerdo2= loadImage("recuerdo.png");
-}
- 
- void rec()
- {
-   load2();
-    memory(_x2, _y2);
-    memory(_x2+200, _y2);
-    memory(_x2+280, _y2);
-    memory(_x2+370, _y2);
-    memory(_x2+510, _y2);
-    memory(_x2+630, _y2);
-    memory(_x2+710, _y2);
-    memory(_x2+820, _y2);
-    memory(_x2+950, _y2);
-    memory(_x2+1100, _y2);
-    _y2 +=10;
 
-}
+  void draw() {
 
-void memory(float pos_x2, float pos_y2){
-  image(recuerdo2, pos_x2, pos_y2, 40, 40);
-  pos_y2 += 3;
+      image(recuerdo1, x, y);
+  
+    //fill(255);
+    //circle(x + (ancho/2), y +(alto/2), diametro);
+  }
 }
