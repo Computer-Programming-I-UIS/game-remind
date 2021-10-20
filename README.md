@@ -22,7 +22,7 @@ El objetivo de Remind es que el jugador logre atravesar todo el recorrido, recog
 ## Menu
 
 <p align= "center">
-  <img src="https://user-images.githubusercontent.com/89646944/136559218-610420b7-b198-433c-9ab9-86640a16b3e1.png">
+  <img src="https://user-images.githubusercontent.com/89646944/138078130-967e8cca-3513-4721-9238-afd8b008bae7.png">
 </p>
 
 Seleccionando el botón, de iniciar encontraras la historia del mundo y las circustancias en las que se ambienta el videojuego, luego según se vaya avanzando podras elegir tu personaje y el nivel de dificultad ira aumentando, hasta llegar al nivel final. Si por el contrario se selecciona el botón, opciones encontrara las instrucciones para que logres mover el personaje (emoción). Por último el botón salir permite abandonar el juego cuando así se desee.
