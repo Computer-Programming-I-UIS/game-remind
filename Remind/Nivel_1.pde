@@ -57,6 +57,9 @@ void jugar()
 
 
   verficarContactoRecuerdoPersonaje();//verifica en que momento chocan el recuerdo y el personaje
+  if ( dist(jugador.xP, jugador.yP, enemigo.x_mas_ancho, enemigo.y_mas_alto) <= jugador.radio + enemigo.radio ) {
+      escenario= 6;
+    }
 }
 void scroll()
 {

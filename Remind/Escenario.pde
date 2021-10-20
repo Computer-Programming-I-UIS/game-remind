@@ -159,3 +159,8 @@ void menu() {
     jugar();
     
   }
+  
+  void gameover()
+  {
+    background(0);
+  }

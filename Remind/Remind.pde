@@ -98,6 +98,9 @@ void draw() {
   case 5:
     jugar2();
     break;
+  case 6: 
+  gameover();
+  break;
   }
   descseleccion();
 }

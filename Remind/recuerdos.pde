@@ -24,25 +24,30 @@ class Recuerdo {
 }
 class Enemigo
 {
-  int xd, vx;
+  int xd,yd, vx,ancho,alto, x_mas_ancho, y_mas_alto, diametro = 40, radio;
   PImage ene1;
   PImage ene2;
   Enemigo()
   {
-    xd=200;
+    xd=280;
+    yd=540;
     vx=4;
-    ene1= loadImage("enemigo1.png");
-    ene2= loadImage("enemigo2.png");
+    ancho=80;
+    alto= 90;
+    ene1= loadImage("enem.png");
+    x_mas_ancho= int(xd + (ancho/2));
+    y_mas_alto= int(yd + (alto/2));
+    radio = diametro/2;
   }
   void draw() {
    // enemigoP();
-    image(ene1, xd, 530, 50, 80);
+    image(ene1, xd,yd ,ancho ,alto );
     xd=xd+vx;
-    if (xd>500)
+    if (xd>380)
     {
       vx=-4;
     }
-    if (xd<200)
+    if (xd<280)
       vx=4;
   }
 }
