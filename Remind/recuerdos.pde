@@ -1,6 +1,6 @@
 class Recuerdo {
   PImage recuerdo1;
-  int x = int(random(0, 900)), y = int(random(0, 500)), ancho = 55, alto = 50;
+  int x = int(random(30, 1500)), y = int(random(150, 500)), ancho = 55, alto = 50;
   int x_mas_ancho, y_mas_alto, diametro = 40, radio;
   //int x, yancho = 55, alto = 50;
 
@@ -24,13 +24,13 @@ class Recuerdo {
 }
 class Enemigo
 {
-  int xd,yd, vx,ancho,alto, x_mas_ancho, y_mas_alto, diametro = 40, radio;
+  int xd,yd, vx,ancho,alto, x_mas_ancho, y_mas_alto, diametro = 30, radio;
   PImage ene1;
   PImage ene2;
   Enemigo()
   {
     xd=280;
-    yd=540;
+    yd=500;
     vx=4;
     ancho=80;
     alto= 90;

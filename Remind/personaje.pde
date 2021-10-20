@@ -22,7 +22,7 @@ class personaje {
     if (keyPressed) {
       if (key ==CODED) {
         if (keyCode==UP ) {
-          vely=-80;
+          vely=-100;
           saltando= true;
         }
         if (keyCode==RIGHT  ) {
