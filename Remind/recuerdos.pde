@@ -29,20 +29,20 @@ class Enemigo
   PImage ene2;
   Enemigo()
   {
-    xd=100;
+    xd=200;
     vx=4;
     ene1= loadImage("enemigo1.png");
     ene2= loadImage("enemigo2.png");
   }
   void draw() {
    // enemigoP();
-    image(ene1, xd, 500, 50, 80);
+    image(ene1, xd, 530, 50, 80);
     xd=xd+vx;
     if (xd>500)
     {
       vx=-4;
     }
-    if (xd<100)
+    if (xd<200)
       vx=4;
   }
 }

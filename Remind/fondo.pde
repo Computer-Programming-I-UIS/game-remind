@@ -8,12 +8,12 @@ class Fondo
     mySprite1= new LeerArchivo (8,5,tilemap).getHoja();
     plataforma = new ArrayList <Sprite1> ();
     
-    bgFondo=loadImage("fondo1.jpeg");
+    bgFondo=loadImage("fonfoe.jpg");
     crearPlataforma(name);
   }
   void mostrar()
   {
-    
+    image(bgFondo,0,0,3000,1900);
     for(Sprite1 p: plataforma)
     p.mostrar();
   }
