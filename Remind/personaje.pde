@@ -26,10 +26,10 @@ class personaje {
           saltando= true;
         }
         if (keyCode==RIGHT  ) {
-          xP=xP+30;
+          xP=xP+20;
         }
         if (keyCode==LEFT) {
-          xP=xP-30;
+          xP=xP-20;
         }
       }
     }

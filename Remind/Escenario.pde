@@ -157,4 +157,5 @@ void menu() {
   {
     background(159, 213,209);
     jugar();
+    
   }

@@ -22,6 +22,8 @@ int suelo= 500;
 boton5 musica;
 boolean press;
 
+Enemigo enemigo;
+
 Minim minim;
 AudioPlayer musicafondo;
 
@@ -33,6 +35,7 @@ void setup() {
   reloj = new StopWatch();
   caminar=new Sprite(this, "spritesalegria.png", 8, 1, 0);
   jugador= new personaje();
+  enemigo= new Enemigo();
 
   minim= new Minim(this);
   musicafondo= minim.loadFile("sonido/audio.mpeg");

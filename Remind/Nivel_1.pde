@@ -45,6 +45,8 @@ void jugar()
   jugador.controles();
   jugador.moveP();
   Player player;
+  enemigo.draw();
+
   
   cantRecuerdos = misRecuerdos.size();
 
