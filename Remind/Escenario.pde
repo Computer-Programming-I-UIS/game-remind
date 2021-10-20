@@ -155,6 +155,6 @@ void menu() {
 
   void jugar2() //escenario 5
   {
-    background(178, 245, 100);
+    background(159, 213,209);
     jugar();
   }
