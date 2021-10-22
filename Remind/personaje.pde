@@ -1,22 +1,14 @@
 class personaje {
   float xP;
   float yP;
-  float xP_mas_ancho,yP_mas_alto;
+  float xP_mas_ancho, yP_mas_alto;
   int diametro = 40, radio;
-  //PImage alegria;
-  //float xP_mas_ancho, yP_mas_alto;
-  //int diametro = 70, radio;
   boolean moviendo=false;
 
   personaje(float x, float y) {
     xP= x;
     yP= y;
     radio = diametro/2;
-    
-    
-    //radio = diametro/2;
-    //xP_mas_ancho = xP -(0.108*694/2);
-    //yP_mas_alto = yP - (976*0.108/2);
   }
 
   void controles() {
@@ -38,36 +30,35 @@ class personaje {
       }
     }
   }
-  
-void move() {
-  
-  if(moviendo==true){
-    if (keyPressed && key==CODED )
-    {
-      if (keyCode==UP) {
-        caminar.setFrameSequence(7, 7, 0.7);
-      }
-      if (keyCode==DOWN){
-        caminar.setFrameSequence(6, 6, 0.7);
-      }
 
-      if (keyCode==RIGHT  ) {
-         caminar.setFrameSequence(0, 2, 0.7);
-      }
-      if (keyCode==LEFT) {
-       caminar.setFrameSequence(3, 5, 0.7);
+  void move() {
+
+    if (moviendo==true) {
+      if (keyPressed && key==CODED )
+      {
+        if (keyCode==UP) {
+          caminar.setFrameSequence(7, 7, 0.7);
+        }
+        if (keyCode==DOWN) {
+          caminar.setFrameSequence(6, 6, 0.7);
+        }
+
+        if (keyCode==RIGHT  ) {
+          caminar.setFrameSequence(0, 2, 0.7);
+        }
+        if (keyCode==LEFT) {
+          caminar.setFrameSequence(3, 5, 0.7);
+        }
       }
     }
-  }
-    if(moviendo==false){
+    if (moviendo==false) {
       caminar.setFrameSequence(7, 7, 0.5);
     }
-  
-  pushMatrix();
-  translate(xP, yP);
-  scale(0.1);
-  caminar.draw();
-  popMatrix();
-}
 
+    pushMatrix();
+    translate(xP, yP);
+    scale(0.1);
+    caminar.draw();
+    popMatrix();
+  }
 }

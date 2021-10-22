@@ -1,3 +1,18 @@
+/*
+
+Autores: 
+-Karen Dayana Valencia Correa
+-Maria Fernanda Valenzuela Sanchez
+
+Descripción: Remind es un juego que consiste en ayudar a Alegría recorrer un camino,
+he ir recolectando bolitas (recuerdos) que se encuentran distribuidas por los niveles
+cuidando no tocar al monstruo de la amnesia y así evitando que esté elimine los recuerdos.
+
+Nota: Descargar las librerias minim y sprites que encontrara en la ruta Sketch>Importar biblioteca...>añadir biblioteca
+
+*/
+
+
 import ddf.minim.*;
 import ddf.minim.analysis.*;
 import ddf.minim.effects.*;
@@ -9,7 +24,7 @@ import sprites.*;
 import sprites.maths.*;
 import sprites.utils.*;
 
-//recuerdos
+
 
 PImage fondoEscenario;
 PImage GameOver;
@@ -42,6 +57,7 @@ void setup() {
   enemigo= new Enemigo();
   GameOver=loadImage("gameover.png");
 
+  //recuerdos
   Recuerdos= new ArrayList<Recuerdo>();
 
 
@@ -65,7 +81,7 @@ void setup() {
   Recuerdos.add(new Recuerdo(253, 420));
   Recuerdos.add(new Recuerdo(1130, 360));
   Recuerdos.add( new Recuerdo(1180, 360));
-  
+
   minim= new Minim(this);
   musicafondo= minim.loadFile("sonido/audio.mpeg");
   // musicafondo.loop();
@@ -82,6 +98,8 @@ void setup() {
   botones[5] = new boton (616, 660, 150, 50, "Atrás");
   botones[6] = new boton (600, 300, 150, 50, "niveles");
   botones[7] = new boton (800, 660, 150, 50, "Continuar");
+  
+  botones[17] = new boton (1100, 600, 200, 70, " ");
 
   //botones despues de elegir personaje
   botones[16] = new boton (50, 6, 130, 35, "Jugar");
@@ -119,7 +137,7 @@ void draw() {
     alegria();
     break;
   case 5:
-    jugar2();
+    jugar();
     break;
   case 6:
     GameOver();
@@ -152,7 +170,6 @@ void verficarContactoRecuerdoPersonaje() {
   for (int i = 0; i < cantRecuerdos; i++) {
 
     Recuerdo recuerdo = Recuerdos.get(i);
-    //circle(alegria.xP, alegria.yP ,alegria.diametro);
     if ( dist(alegria.xP, alegria.yP, recuerdo.x_mas_ancho, recuerdo.y_mas_alto) <= alegria.radio + recuerdo.radio ) {
       recuerdoAEliminar = i;
     }

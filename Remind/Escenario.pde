@@ -40,7 +40,7 @@ void loadImages() {
 
   gameov= loadImage("gameover.png");
   gameov.resize(width, height);
-  
+
   creditfondo= loadImage("fondocreditos.png");
   creditfondo.resize(width, height);
 }
@@ -74,14 +74,7 @@ void menu() {
       musicafondo.loop();
     }
   }
-  /*if (press==false) {
-   musica.sonidoOFF();
-   }
-   if (press==true) {
-   
-   musica.sonidoON();
-   }
-   */
+
 
   if (botones[1].click()) {
     escenario= 1;
@@ -164,17 +157,42 @@ void alegria() {
   }
 }
 
-void jugar2() //escenario 5
+void jugar() //escenario 5
 {
-  jugar();
+  pushMatrix();
+  translate(683, 384);
+  image(fondoEscenario, 0, 0, width, height);
+  popMatrix();
+
+  alegria.move();
+  alegria.controles();
+  enemigo.draw();
+  cantRecuerdos = Recuerdos.size();
+  for (int i = 0; i < cantRecuerdos; i++) {
+    Recuerdo recuerdo = Recuerdos.get(i);
+    recuerdo.draw();
+  }
+  verficarContactoRecuerdoPersonaje();
+  
+  verficarContactoRecuerdoPersonaje();//verifica en que momento chocan el recuerdo y el personaje
+  if ( dist(alegria.xP, alegria.yP, enemigo.xd, enemigo.yd) <= alegria.radio + enemigo.radio ) {
+      escenario= 6;
+    }
 }
 
 void GameOver()
 {
+  
   pushMatrix();
   translate(683, 384);
   image(GameOver, 0, 0, width, height);
   popMatrix();
+
+  botones[17].botonmenu();
+
+  if (botones[17].click()) {
+    exit();
+  }
 }
 
 void credit() {

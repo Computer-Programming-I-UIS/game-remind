@@ -15,23 +15,23 @@ class boton {
     alto= H;
     texto= T;
   }
-  
-  void loadimag(){
+
+  void loadimag() {
     botonA= loadImage("boton1.png");
     botonA.resize(ancho, alto);
-    
+
     botonB= loadImage("boton2.png");
     botonB.resize(ancho, alto);
-    
+
     botonC= loadImage("boton3.png");
     botonC.resize(ancho+40, alto+40);
-    
+
     botonD= loadImage("boton4.png");
     botonD.resize(ancho+40, alto+40);
   }
-    
-  
-  boolean mousedentro(){
+
+
+  boolean mousedentro() {
     if (mouseX >= posx && mouseX<= posx + ancho && mouseY >= posy  && mouseY <= posy + alto) {
       return true;
     } else {
@@ -41,7 +41,7 @@ class boton {
 
   void botonmenu() { //botones cambio escenario
     loadimag();
-    if (mousedentro() == true) { 
+    if (mousedentro() == true) {
       image(botonB, posx, posy);
       fill(#C9AE4D);
       textSize(22);
@@ -56,9 +56,9 @@ class boton {
       text(texto, posx + ancho/2, posy + alto/3);
     }
   }
-  void Bpersonaje(){//botones eleccion personaje
+  void Bpersonaje() {//botones eleccion personaje
     loadimag();
-    if (mousedentro() == true) { 
+    if (mousedentro() == true) {
       image(botonD, posx, posy);
       fill(0);
       textSize(22);
@@ -72,9 +72,9 @@ class boton {
       text(texto, posx + ancho-80, posy + alto - 20);
     }
   }
-  void BColor(){//botones despues de elegir personaje
+  void BColor() {//botones despues de elegir personaje
     loadimag();
-    if (mousedentro() == true) { 
+    if (mousedentro() == true) {
       image(botonA, posx, posy);
       fill(#C9AE4D);
       textSize(22);
@@ -90,8 +90,8 @@ class boton {
       text(texto, posx + ancho/2, posy + alto/3);
     }
   }
-  
-  void Bcicular(){//boton circular x
+
+  void Bcicular() {//boton circular x
     if (mouseX >= posx- ancho/2 && mouseX<= posx + ancho/2 && mouseY >= posy - alto/2 && mouseY <= posy + alto/2) {
       mousedentro2= true;
     } else {
