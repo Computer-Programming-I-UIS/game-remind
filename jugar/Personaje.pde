@@ -1,7 +1,8 @@
 class personaje {
   float xP;
   float yP;
-  
+  float xP_mas_ancho,yP_mas_alto;
+  int diametro = 40, radio;
   //PImage alegria;
   //float xP_mas_ancho, yP_mas_alto;
   //int diametro = 70, radio;
@@ -10,6 +11,8 @@ class personaje {
   personaje(float x, float y) {
     xP= x;
     yP= y;
+    radio = diametro/2;
+    
     
     //radio = diametro/2;
     //xP_mas_ancho = xP -(0.108*694/2);
