@@ -9,7 +9,7 @@
 
 ## Historia
 
-Riley (protagonista de intensamente) ha viajado con sus amigos de preparatoria a un lugar cercano a su ciudad como despedida de fin de año, con la mala suerte de que el autobús en el que se dirigían ha chocado contra una ceiba, a raíz de esto Riley sufre una amnesia, y las emociones serán las encargadas de reunir los recuerdos, atravesando por diferentes desafíos (niveles), hasta llegar al último nivel, en el que se deberá enfrentar al temible  monstruo AMNESIA, el cual lanzara gases amnésicos para que la emoción, pierda los recuerdos, ganara el juego quien logre completar todos los niveles, y sea capaz de superar la agilidad y maldad de AMNESIA, solo ganándole, se logrará que Riley recupere cada uno de los recuerdos de su vida.
+Riley (protagonista de intensamente) ha viajado con sus amigos de preparatoria a un lugar cercano a su ciudad como despedida de fin de año, con la mala suerte de que el autobús en el que se dirigían ha chocado contra una ceiba, a raíz de esto Riley sufre una amnesia, y las emociones serán las encargadas de reunir los recuerdos, atravesando por diferentes desafíos (niveles) y evitando ser eliminado por nuestro enemigo amnesia, hasta llegar al último nivel, solo superando estos desafios, se logrará que Riley recupere cada uno de los recuerdos de su vida.
 
 ## Descripción del juego:
 
@@ -54,5 +54,10 @@ Imagenes usadas para la creación de las ilustraciones
 
 Banda sonora 
 - Inside Out de Michael Giacchino
+
+## Agradecimientos 
+- Melissa Carvajalino
+- Alex Mantilla
+- Nicolas Chaparro Toloza
 
 
