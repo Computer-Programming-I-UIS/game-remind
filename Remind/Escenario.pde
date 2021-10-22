@@ -166,13 +166,15 @@ void alegria() {
 
 void jugar2() //escenario 5
 {
-  background(159, 213, 209);
   jugar();
 }
 
 void GameOver()
 {
-  background(0);
+  pushMatrix();
+  translate(683, 384);
+  image(GameOver, 0, 0, width, height);
+  popMatrix();
 }
 
 void credit() {

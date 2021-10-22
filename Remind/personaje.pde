@@ -1,94 +1,73 @@
 class personaje {
-  float xP=150;
-  float yP= 500;
-  float vely;
-  boolean saltando;
-  boolean Arr;
-  boolean Izq;
-  boolean Der;
-  
+  float xP;
+  float yP;
   float xP_mas_ancho,yP_mas_alto;
- // = int(0.108*694);int(976*0.108);
-  int diametro = 70, radio;
+  int diametro = 40, radio;
+  //PImage alegria;
+  //float xP_mas_ancho, yP_mas_alto;
+  //int diametro = 70, radio;
+  boolean moviendo=false;
 
-  personaje() {
+  personaje(float x, float y) {
+    xP= x;
+    yP= y;
     radio = diametro/2;
-    xP_mas_ancho = xP -(0.108*694/2);
-    yP_mas_alto = yP - (976*0.108/2);
-  }//cierra el constructor
-  //boolean up=false,rith=false,left=false;
+    
+    
+    //radio = diametro/2;
+    //xP_mas_ancho = xP -(0.108*694/2);
+    //yP_mas_alto = yP - (976*0.108/2);
+  }
 
   void controles() {
     if (keyPressed) {
       if (key ==CODED) {
+        moviendo= true;
         if (keyCode==UP ) {
-          vely=-100;
-          saltando= true;
+          yP=yP-10;
+        }
+        if (keyCode==DOWN) {
+          yP=yP+10;
         }
         if (keyCode==RIGHT  ) {
-          xP=xP+20;
+          xP=xP+10;
         }
         if (keyCode==LEFT) {
-          xP=xP-20;
+          xP=xP-10;
         }
       }
     }
   }
-
-  void moveP() {
+  
+void move() {
+  
+  if(moviendo==true){
     if (keyPressed && key==CODED )
     {
       if (keyCode==UP) {
-        Arr= true;
-        Der= false;
-        Izq= false;
+        caminar.setFrameSequence(7, 7, 0.7);
+      }
+      if (keyCode==DOWN){
+        caminar.setFrameSequence(6, 6, 0.7);
       }
 
       if (keyCode==RIGHT  ) {
-        Der= true;
-        Izq= false;
-        Arr= false;
+         caminar.setFrameSequence(0, 2, 0.7);
       }
       if (keyCode==LEFT) {
-        Izq= true;
-        Arr= false;
-        Der= false;
+       caminar.setFrameSequence(3, 5, 0.7);
       }
-    } else {
-      caminar.setFrameSequence(0, 0, 0.1);
-    }
-
-    if (Arr && !Izq && !Der) {
-      caminar.setFrameSequence(0, 1, 3.1);
-    }
-    if (!Arr &&!Izq && Der) {
-      caminar.setFrameSequence(0, 3, 0.04);
-    }
-    if (!Arr && Izq && !Der) {
-      caminar.setFrameSequence(5, 7, 0.04);
-    }
-    //circle(xP, yP, diametro);
-    pushMatrix();
-    translate(xP, yP);
-    
-    scale(0.108);
-    caminar.draw();
-    
-    popMatrix();
-
-    yP= constrain(yP+vely, 400, suelo);
-    if (saltando) {
-      vely += 40;
-      if (y ==suelo)
-        saltando = false;
-
-      //for (Sprite1 p : plataforma){
-      //  p.mostrar();
-      //}
     }
   }
-  float pospersonaje()
-  {
-    return xP;
-  }
+    if(moviendo==false){
+      caminar.setFrameSequence(7, 7, 0.5);
+    }
+  
+  pushMatrix();
+  translate(xP, yP);
+  scale(0.1);
+  caminar.draw();
+  popMatrix();
+}
+
 }

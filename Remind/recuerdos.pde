@@ -1,11 +1,13 @@
 class Recuerdo {
   PImage recuerdo1;
-  int x = int(random(30, 1500)), y = int(random(150, 500)), ancho = 55, alto = 50;
-  int x_mas_ancho, y_mas_alto, diametro = 40, radio;
+  int x, y, ancho = 55, alto = 50;
+  int x_mas_ancho, y_mas_alto, diametro = 70, radio;
   //int x, yancho = 55, alto = 50;
 
-  Recuerdo() {
+  Recuerdo(int _x, int _y) {
     //int _x,int _y
+    x= _x;
+    y=_y;
     recuerdo1= loadImage("recuerdo.png");
     recuerdo1.resize(ancho, alto);
     x_mas_ancho = x + (ancho/2);
@@ -22,32 +24,31 @@ class Recuerdo {
     //circle(x + (ancho/2), y +(alto/2), diametro);
   }
 }
+
 class Enemigo
 {
-  int xd,yd, vx,ancho,alto, x_mas_ancho, y_mas_alto, diametro = 30, radio;
+  float xd,yd, vx,ancho,alto, x_mas_ancho, y_mas_alto, diametro = 20, radio;
   PImage ene1;
   PImage ene2;
   Enemigo()
   {
-    xd=280;
-    yd=500;
+    xd=110;
+    yd=640;
     vx=4;
-    ancho=80;
-    alto= 90;
+    ancho=70;
+    alto= 80;
     ene1= loadImage("enem.png");
-    x_mas_ancho= int(xd + (ancho/2));
-    y_mas_alto= int(yd + (alto/2));
     radio = diametro/2;
   }
   void draw() {
    // enemigoP();
     image(ene1, xd,yd ,ancho ,alto );
     xd=xd+vx;
-    if (xd>380)
+    if (xd>1280)
     {
-      vx=-4;
+      vx=-15;
     }
-    if (xd<280)
-      vx=4;
+    if (xd<120)
+      vx=15;
   }
 }

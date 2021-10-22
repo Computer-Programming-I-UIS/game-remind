@@ -10,19 +10,22 @@ import sprites.maths.*;
 import sprites.utils.*;
 
 //recuerdos
-ArrayList<Recuerdo> misRecuerdos;
-int cantRecuerdos = 10;
 
-PImage prueba;
+PImage fondoEscenario;
+PImage GameOver;
 Sprite caminar;
 StopWatch reloj;
-float tiempo=0;
-personaje jugador;
-int suelo= 500;
+float tiempo;
+personaje alegria;
+Enemigo enemigo;
+int escenarios= 0;
+
+ArrayList<Recuerdo> Recuerdos;
+int cantRecuerdos = 20;
+
 boton5 musica;
 boolean press;
 
-Enemigo enemigo;
 
 Minim minim;
 AudioPlayer musicafondo;
@@ -32,23 +35,43 @@ boton[] botones= new boton[20];
 
 void setup() {
   fullScreen();
+  fondoEscenario= loadImage("fondoV2.png");
   reloj = new StopWatch();
-  caminar=new Sprite(this, "spritesalegria.png", 8, 1, 0);
-  jugador= new personaje();
+  caminar=new Sprite(this, "newspritesalegria.png", 8, 1, 0);
+  alegria= new personaje((width/2)+20, (height/2)+150);
   enemigo= new Enemigo();
+  GameOver=loadImage("gameover.png");
 
+  Recuerdos= new ArrayList<Recuerdo>();
+
+
+  Recuerdos.add(new Recuerdo(110, 120));
+  Recuerdos.add(new Recuerdo(110, 170));
+  Recuerdos.add(new Recuerdo(160, 120));
+  Recuerdos.add(new Recuerdo(110, 650));
+  Recuerdos.add(new Recuerdo(110, 600));
+  Recuerdos.add(new Recuerdo(160, 650));
+  Recuerdos.add(new Recuerdo(1280, 130));
+  Recuerdos.add(new Recuerdo(1230, 130));
+  Recuerdos.add(new Recuerdo(1280, 180));
+  Recuerdos.add(new Recuerdo(1280, 660));
+  Recuerdos.add(new Recuerdo(1280, 610));
+  Recuerdos.add(new Recuerdo(1230, 660));
+  Recuerdos.add(new Recuerdo(880, 500));
+  Recuerdos.add(new Recuerdo(540, 500));
+  Recuerdos.add(new Recuerdo(880, 270));
+  Recuerdos.add(new Recuerdo(545, 270));
+  Recuerdos.add(new Recuerdo(250, 500));
+  Recuerdos.add(new Recuerdo(253, 420));
+  Recuerdos.add(new Recuerdo(1130, 360));
+  Recuerdos.add( new Recuerdo(1180, 360));
+  
   minim= new Minim(this);
   musicafondo= minim.loadFile("sonido/audio.mpeg");
   // musicafondo.loop();
   //boton musica
   musica= new boton5 (1250, 140, 50, 50);
 
-  //recuerdos
-  misRecuerdos = new ArrayList<Recuerdo>();
-  for (int i = 0; i < cantRecuerdos; i++) {
-    Recuerdo recuerdo = new Recuerdo();
-    misRecuerdos.add(recuerdo);
-  }
 
   //botones cambio escenario
   botones[1] = new boton (1050, 300, 200, 70, "Iniciar");
@@ -124,18 +147,18 @@ void descseleccion() { //despues del primer click ya no contara los siguientes
 }
 
 void verficarContactoRecuerdoPersonaje() {
-  cantRecuerdos = misRecuerdos.size();
+  cantRecuerdos = Recuerdos.size();
   int recuerdoAEliminar = -1;
   for (int i = 0; i < cantRecuerdos; i++) {
 
-    Recuerdo recuerdo = misRecuerdos.get(i);
-
-    if ( dist(jugador.xP, jugador.yP, recuerdo.x_mas_ancho, recuerdo.y_mas_alto) <= jugador.radio + recuerdo.radio ) {
+    Recuerdo recuerdo = Recuerdos.get(i);
+    //circle(alegria.xP, alegria.yP ,alegria.diametro);
+    if ( dist(alegria.xP, alegria.yP, recuerdo.x_mas_ancho, recuerdo.y_mas_alto) <= alegria.radio + recuerdo.radio ) {
       recuerdoAEliminar = i;
     }
   }
 
   if ( recuerdoAEliminar != -1 ) {
-    misRecuerdos.remove(recuerdoAEliminar);
+    Recuerdos.remove(recuerdoAEliminar);
   }
 }
